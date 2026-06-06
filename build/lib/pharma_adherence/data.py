@@ -3,30 +3,30 @@ import pandas as pd
 from .cleaning import clean_prescription_data
 from .visualization import plot_hist, plot_bar, plot_scatter
 from .patient import PatientAdherenceProfile
-
+'''import pandas, as well as functions from the other modules in the build'''
 
 class PharmaDataset:
     def __init__(self, filepath):
         self.df = self.load(filepath).copy()
         self.cleaned = False
-    
+    '''note this sets the 'cleaned' status of the dataset to false by default'''
     def load(self, filepath):
         filepath = Path(filepath)
 
         if not filepath.exists():
             raise FileNotFoundError(f"File not found: {filepath}")
-
+    '''prevents attempts at loading a file if it doesn't exist'''
         df = pd.read_csv(filepath)
         return df
 
     def clean(self):
         self.df = clean_prescription_data(self.df)
         self.cleaned = True
-    
+    '''runs the cleaning functions from the cleaning.py module'''
     def save(self, filepath):
         if self.cleaned is False:
             raise ValueError("Run clean() first.")
-        
+
         filepath = Path(filepath)
         filepath.parent.mkdir(parents=True, exist_ok=True)
         
@@ -53,7 +53,7 @@ class PharmaDataset:
     def get_patient(self, patient_id):
         if self.cleaned is False:
             raise ValueError("Run clean() first.")
-        
+     '''All these functions create an error if the data is not yet cleaned. Prevents the system from running until the cleaning function is run first.'''
         patient_df = self.df[
             self.df["patient_id"] == patient_id
         ]
@@ -65,3 +65,4 @@ class PharmaDataset:
     
     def is_clean(self):
         return self.cleaned
+'''checks whether data is cleaned'''
