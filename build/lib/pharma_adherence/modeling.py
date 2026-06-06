@@ -16,7 +16,7 @@ from sklearn.metrics import (
 )
 from sklearn.model_selection import train_test_split
 
-
+'''This is the model trainer that is used for machine learning and linear regression training'''
 class ModelTrainer:
     def __init__(self, df: pd.DataFrame, target: str, features: list[str]):
         self.df = df
@@ -97,7 +97,7 @@ class ModelTrainer:
         self.model = Pipeline(
             steps=[
                 ("preprocessor", preprocessor),
-                ("classifer", LogisticRegression(max_iter=1000)),
+                ("classifier", LogisticRegression(max_iter=1000)),
             ]
         )
 
