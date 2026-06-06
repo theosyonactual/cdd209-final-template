@@ -18,10 +18,12 @@ dataset.save("data/processed/prescriptions_large_cleaned.csv")
 dataset.hist("drug_name").show()
 dataset.bar("drug_name", "proportion_days_covered").show()
 dataset.scatter("patient_age", "proportion_days_covered").show()
+'''histogram for drug types present in data, bar chart for drugs that are most/least covered, scatter plot of coverage over patient age (allows for linear regression)'''
 
 #TODO: Look at the summary of a patient
 patient = dataset.get_patient("P057")
 print(patient.summary())
+'''summary for patient P057'''
 
 """
 DAY 2: MACHINE LEARNING
