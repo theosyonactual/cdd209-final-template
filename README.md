@@ -15,7 +15,7 @@ Pharma Adherence project for CDD209. Can model data from a pharma adherence data
 ### Clone the repository
 
 ```
-git clone [URL]
+git clone [https://github.com/theosyonactual/cdd209-final-template]
 ```
 
 ### Create a virtual environment
