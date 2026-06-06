@@ -1,6 +1,6 @@
 # PROJECT
 
-project description
+Pharma Adherence project for CDD209. Can model data from a pharma adherence dataset.
 
 ## Features
 
@@ -34,7 +34,7 @@ pip install .
 
 ## Usage
 
-write stuff here
+Use to model data from the given dataset.
 
 ## Testing
 
